@@ -1,0 +1,27 @@
+input {
+  outline: none;
+  border: 0px solid grey;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #c7c8cc;
+  font-weight: 500;
+}
+
+.input--box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.summary {
+  color: #eaeaea;
+}
+
+.modal-title {
+  color: #e8e8e8;
+}
+
+.modal-content {
+  background-color: #202020;
+}

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useData } from "../../hooks/useData";
 import { useState, useEffect } from "react";
+import "./summarycard.css";
 
 const SummaryCard = () => {
   const { id } = useParams();
@@ -113,7 +114,11 @@ const SummaryCard = () => {
                   className="close"
                   data-dismiss="modal"
                   aria-label="Close"
-                  style={{ border: "none" }}
+                  style={{
+                    border: "none",
+                    background: "#898989",
+                    borderRadius: "5px",
+                  }}
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -149,13 +154,14 @@ const SummaryCard = () => {
                       value={formData?.ticket}
                       onChange={handleChange}
                     />
+                    {isInvalidForm && (
+                      <div className="alert alert-danger" role="alert">
+                        Please fill in the form details correctly.
+                      </div>
+                    )}
                   </div>
                 </div>
-                {isInvalidForm && (
-                  <div class="alert alert-danger" role="alert">
-                    Please fill in the form details correctly.
-                  </div>
-                )}
+
                 <div className="modal-footer">
                   <button
                     type="button"

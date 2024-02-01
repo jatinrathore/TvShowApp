@@ -2,6 +2,12 @@ import "./card.css";
 import noImage from "../../assets/no-image-placeholder-6f3882e0.webp";
 import { Link } from "react-router-dom";
 const Card = ({ id, imageUrl, title, lang, weight, type, premeireDate }) => {
+  let coloredClass = "";
+
+  if (weight >= 90) coloredClass = "green";
+  else if (weight >= 50) coloredClass = "yellow";
+  else coloredClass = "red";
+
   return (
     <div className="card--container">
       <div>
@@ -16,16 +22,16 @@ const Card = ({ id, imageUrl, title, lang, weight, type, premeireDate }) => {
           <Link to={"/" + id}>
             <h3 className="title">{title}</h3>
           </Link>
-          <div className="weight--container">
+          <div className={"weight--container " + coloredClass}>
             <p className="film--weight">{weight}</p>
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <p className="language">{lang}</p>
+          <p className="language text">{lang}</p>
         </div>
         <div className="details--footer">
-          <p className="film--type">{type}</p>
-          <p className="premiered">{premeireDate}</p>
+          <p className="film--type text">{type}</p>
+          <p className="premiered text">{premeireDate}</p>
         </div>
       </div>
     </div>
