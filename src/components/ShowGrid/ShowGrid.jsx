@@ -3,7 +3,21 @@ import Card from "../Card";
 import { useData } from "../../hooks/useData";
 
 const ShowGrid = () => {
-  const { data } = useData();
+  const { data, isLoading, isError } = useData();
+
+  if (isLoading)
+    return (
+      <div className="container">
+        <h2>Loading...</h2>
+      </div>
+    );
+
+  if (isError)
+    return (
+      <div className="container">
+        <h2>Something went wrong...</h2>
+      </div>
+    );
 
   return (
     <div className="container">

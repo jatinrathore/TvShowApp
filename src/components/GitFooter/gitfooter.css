@@ -1,0 +1,31 @@
+a {
+  color: inherit;
+}
+
+.git--footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.git--username {
+  margin: 0;
+  color: #eaeaea;
+}
+
+.logo {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Styles for small screens go here */
+  .git--username {
+    font-size: 0.8rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+}
