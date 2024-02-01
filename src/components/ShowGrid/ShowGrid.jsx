@@ -6,7 +6,7 @@ const ShowGrid = () => {
   const { data } = useData();
 
   return (
-    <div className="container mt-3 rounded-1">
+    <div className="container">
       <div className="grid">
         {data &&
           data.map((film) => (
